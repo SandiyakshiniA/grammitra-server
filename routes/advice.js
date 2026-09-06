@@ -24,7 +24,7 @@ Respond entirely in: ${lang}
 Give short, concrete, actionable advice (max 120 words) in plain, simple language a small shopkeeper would understand. Include: one immediate action they can take this week, one cost-saving idea, and one growth idea. No jargon. No headers, just plain conversational text, written entirely in ${lang}.`;
 
     const apiKey = process.env.GEMINI_API_KEY;
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey}`;
 
     const geminiResponse = await fetch(geminiUrl, {
       method: 'POST',
