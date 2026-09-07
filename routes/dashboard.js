@@ -29,5 +29,7 @@ router.get('/dashboard', requireAuth, async (req, res) => {
     res.status(500).json({ error: 'Something went wrong loading your dashboard.' });
   }
 });
+// PUT /api/profile (protected) router.put('/profile', requireAuth, async (req, res) => { try { const { name, village } = req.body; if (!name || !name.trim()) { return res.status(400).json({ error: 'Name is required.' }); } const user = await User.findByIdAndUpdate( req.userId, { name: name.trim(), village: (village || '').trim() }, { new: true } ).select('name village'); if (!user) { return res.status(404).json({ error: 'User not found.' }); } res.json({ name: user.name, village: user.village }); } catch (err) { console.error('Profile update error:', err); res.status(500).json({ error: 'Something went wrong updating your profile.' }); } }); module.exports = router;
 
-module.exports = router;
+
+
